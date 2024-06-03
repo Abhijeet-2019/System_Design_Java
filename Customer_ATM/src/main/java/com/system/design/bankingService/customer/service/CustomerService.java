@@ -79,6 +79,7 @@ public class CustomerService {
         Card card = new Card();
         card.setCardNo("A1234 1456 1111 1212");
         card.setCardPin("2121");
+
         return card;
     }
 }

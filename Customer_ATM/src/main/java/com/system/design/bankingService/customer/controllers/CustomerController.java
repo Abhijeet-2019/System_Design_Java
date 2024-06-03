@@ -31,7 +31,6 @@ public class CustomerController {
     @PostMapping("/addNewCustomer")
     public ResponseEntity<String> addNewCustomer(@RequestBody Customer customer){
         log.info("Adding a new Customer"+customer);
-
         try {
             customerService.addNewCustomer(customer);
         }catch (Exception e){
@@ -39,5 +38,9 @@ public class CustomerController {
             return ResponseEntity.internalServerError().build();
         }
         return ResponseEntity.ok("Successfully saved the Customer");
+    }
+    @GetMapping("/check")
+    public ResponseEntity<String> checkServices(){
+        return ResponseEntity.ok("Working");
     }
 }

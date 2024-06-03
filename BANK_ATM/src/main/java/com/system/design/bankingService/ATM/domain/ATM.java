@@ -3,6 +3,9 @@ package com.system.design.bankingService.ATM.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Cascade;
+
+import java.sql.Timestamp;
 
 @Entity
 @Table
@@ -11,9 +14,9 @@ import lombok.Setter;
 public class ATM {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator = "customer_generator")
-    @SequenceGenerator(name = "customer_generator",
-            sequenceName = "customer_sequence",
+            generator = "atmSeq_generator")
+    @SequenceGenerator(name = "atmSeq_generator",
+            sequenceName = "atm_sequence",
             allocationSize = 1)
 
     @Column(name = "ATM_ID")
@@ -41,10 +44,18 @@ public class ATM {
     private int day_AmountDeposit;
 
     @Column(name = "AMOUNT_DEPOSIT_STATUS")
-    private int deposit_Status;
+    private String deposit_Status;
 
     @Column(name = "LAST_ATM_DEPOSIT_DATE")
-    private int amountDepositDate;
+    private Timestamp amountDepositDate;
+
+    @OneToOne(mappedBy = "atm", fetch = FetchType.EAGER)
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    private ATMTransaction atmTransaction;
 
 
+    public void addTransaction(ATMTransaction atmTransaction){
+        atmTransaction.setAtm(this);
+        this.setAtmTransaction(atmTransaction);
+    }
 }

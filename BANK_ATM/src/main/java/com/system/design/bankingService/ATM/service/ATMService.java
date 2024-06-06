@@ -3,7 +3,7 @@ package com.system.design.bankingService.ATM.service;
 import com.system.design.bankingService.ATM.Repository.ATMRepository;
 import com.system.design.bankingService.ATM.domain.ATM;
 import com.system.design.bankingService.ATM.domain.ATMTransaction;
-import com.system.design.bankingService.ATM.util.Operation;
+import com.system.design.bankingService.ATM.util.AtmOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +23,7 @@ public class ATMService {
         atmCash.setNo_100_Available(parmaAtmCash.getNo_100_Available());
         atmCash.setNo_500_Available(parmaAtmCash.getNo_500_Available());
         atmCash.setAmountDepositDate(parmaAtmCash.getAmountDepositDate());
-        atmCash.setDeposit_Status(Operation.Statuses.SUCCESS.name());
+        atmCash.setDeposit_Status(AtmOperation.Statuses.SUCCESS.name());
 
         ATMTransaction atmTrans = new ATMTransaction();
         atmTrans.setCustomerId(parmaAtmCash.getAtmTransaction().getCustomerId());

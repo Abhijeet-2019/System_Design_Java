@@ -1,6 +1,6 @@
 package com.system.design.bankingService.ATM.util;
 
-public class Operation {
+public class AtmOperation {
     public enum Statuses{
         SUCCESS,
         FAILED,

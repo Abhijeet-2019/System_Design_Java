@@ -34,4 +34,11 @@ public class AtmController {
         log.info("check the ATM Status");
         return ResponseEntity.ok("Working");
     }
+
+    @GetMapping("/withdrawFromATm")
+    public ResponseEntity<Object> withdrawFromAccount(){
+        return ResponseEntity.ok("Working");
+    }
+
+
 }

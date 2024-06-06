@@ -36,6 +36,9 @@ public class Customer {
     @Column(name = "CUSTOMER_PINCODE")
     private int customer_PinCode;
 
+    @Transient
+    private boolean isAuthenticated;
+
     @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<Customer_Account> customer_accountsList;

@@ -8,16 +8,16 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 /**
  * This application is used to add Customer Details
  * & provide a window to interact with ATM Service
- * Main method for the application of Customer
  * Swagger  link  : http://localhost:8084/customer/swagger-ui/index.html
+ * Main method for the application of Customer
  */
 @Slf4j
 @SpringBootApplication
 @EnableDiscoveryClient
-public class ATMCustomerAppStartup {
+public class CustomerAppStartUp {
     public static void main(String[] args) {
         log.info("******Starting the ATM Customer App******");
-        SpringApplication.run(ATMCustomerAppStartup.class);
+        SpringApplication.run(CustomerAppStartUp.class);
         log.info("******Started the ATM Customer App******");
     }
 }

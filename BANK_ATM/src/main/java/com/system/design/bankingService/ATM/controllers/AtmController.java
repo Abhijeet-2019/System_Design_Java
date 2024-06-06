@@ -35,10 +35,14 @@ public class AtmController {
         return ResponseEntity.ok("Working");
     }
 
-    @GetMapping("/withdrawFromATm")
-    public ResponseEntity<Object> withdrawFromAccount(){
+    @GetMapping("/withdrawCashFromATM")
+    public ResponseEntity<Object> withdrawFromAccount(@RequestParam String customerId,
+                @RequestParam String accountId, int withdrawAmount){
+           try {
+               atmService.withdrawCashFromAccount(customerId, accountId, withdrawAmount);
+           }catch (Exception e){
+               return ResponseEntity.ok("Not Working");
+           }
         return ResponseEntity.ok("Working");
     }
-
-
 }

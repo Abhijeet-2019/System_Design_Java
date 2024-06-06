@@ -37,6 +37,9 @@ public class ATM {
     @Column(name = "NO_OF_FIVE_HUNDRED_AVAILABLE")
     private int no_500_Available;
 
+    @Column(name = "NO_OF_TWO_HUNDRED_AVAILABLE")
+    private int no_200_Available;
+
     @Column(name = "NO_OF_ONE_HUNDRED_AVAILABLE")
     private int no_100_Available;
 

@@ -10,4 +10,16 @@ public class AtmOperation {
         Deposit,
         Withdraw
     }
+    public enum CURRENCY_NOTES {
+        FIVE_HUNDRED(500),
+        TWO_HUNDRED(200),
+        ONE_HUNDRED(100);
+        private int numVal;
+        CURRENCY_NOTES(int numVal) {
+            this.numVal = numVal;
+        }
+        public int getNumVal() {
+            return numVal;
+        }
+    }
 }

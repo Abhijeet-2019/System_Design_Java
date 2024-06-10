@@ -25,4 +25,4 @@ jobs:
       - name: Build with Maven service Customer ATM
         run: mvn -B package --file Customer_ATM/pom.xml
       - name: Build with Maven service Bank ATM
-        run: mvn -B package --file Bank_ATM/pom.xml
+        run: mvn -B package --file BANK_ATM/pom.xml

@@ -36,13 +36,14 @@ public class AtmController {
     }
 
     @GetMapping("/withdrawCashFromATM")
-    public ResponseEntity<Object> withdrawFromAccount(@RequestParam String customerId,
+    public ResponseEntity<String> withdrawFromAccount(@RequestParam String customerId,
                 @RequestParam String accountId, int withdrawAmount){
            try {
                atmService.withdrawCashFromAccount(customerId, accountId, withdrawAmount);
            }catch (Exception e){
-               return ResponseEntity.ok("Not Working");
+               return ResponseEntity.ok("Cash Value enter is Invalid... Enter Correct amount");
            }
-        return ResponseEntity.ok("Working");
+        return ResponseEntity.
+                ok("Cash has been debited from account id "+accountId+" for Customer "+customerId);
     }
 }

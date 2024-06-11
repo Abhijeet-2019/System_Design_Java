@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * Main Swagger Link http://localhost:8082/atm/swagger-ui/index.html
+ * Main Swagger Link
+ * http://localhost:8082/atm/swagger-ui/index.html
  */
 @SpringBootApplication
 @Slf4j

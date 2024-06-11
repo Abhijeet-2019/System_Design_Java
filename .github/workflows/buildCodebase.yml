@@ -1,11 +1,11 @@
-name: Spring-Boot CI/CD Pipeline
+name: Spring Boot Code Build
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
           cache: maven
       - name: Build with Maven service Discovery
         run: mvn -B package --file Discovery/pom.xml
-      - name: Build with Maven service GateWay
+      - name: Build with Maven service GateWay API
         run: mvn -B package --file GateWayService/pom.xml
       - name: Build with Maven service Customer ATM
         run: mvn -B package --file Customer_ATM/pom.xml
